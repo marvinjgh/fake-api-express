@@ -1,0 +1,19 @@
+{
+  "name": "mock",
+  "version": "1.0.0",
+  "description": "mock server",
+  "type": "module",
+  "main": "mock.js",
+  "scripts": {
+    "start": "node mock.js",
+    "start:dev": "nodemon mock.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express-mock-server": "^3.4.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
