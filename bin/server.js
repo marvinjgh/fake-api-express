@@ -8,7 +8,7 @@ import app from '../app.js';
 import debug from 'debug';
 import http from 'http';
 
-let debugServer = debug('mock:server');
+let loggerDebug = debug('mock:server');
 
 /**
  * Get port from environment and store in Express.
@@ -88,5 +88,5 @@ function onListening() {
   var bind = typeof addr === 'string'
     ? 'pipe ' + addr
     : 'port ' + addr.port;
-  debugServer('Listening on ' + bind);
+  loggerDebug('Listening on ' + bind);
 }
