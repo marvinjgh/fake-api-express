@@ -1,17 +1,36 @@
 {
-  "name": "mock",
-  "version": "1.0.0",
-  "description": "mock server",
-  "type": "module",
-  "main": "mock.js",
-  "scripts": {
-    "start": "node mock.js",
-    "start:dev": "nodemon mock.js"
+  "name": "fake-api-express",
+  "description": "Mock server powered by Express.js",
+  "version": "0.1.1",
+  "private": false,
+  "engines": {
+    "node": "^18"
   },
-  "author": "",
-  "license": "ISC",
+  "type": "module",
+  "scripts": {
+    "start": "node ./bin/www",
+    "dev": "nodemon ./bin/www"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marvinjgh/fake-api-express.git"
+  },
+  "author": {
+    "name": "Marvin Gonzalez",
+    "email": "marvinjgh@gmail.com",
+    "url": "https://github.com/marvinjgh"
+  },
+  "license": "MIT",
+  "keywords": [
+    "mock",
+    "server",
+    "express"
+  ],
   "dependencies": {
-    "express-mock-server": "^3.4.2"
+    "cors": "^2.8.5",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "morgan": "~1.9.1"
   },
   "devDependencies": {
     "nodemon": "^3.0.2"
