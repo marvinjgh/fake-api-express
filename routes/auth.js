@@ -27,12 +27,12 @@ router.post("/login", function (req, res, next) {
   );
   if (!user) {
     res.status(401).send({ message: "email or password not valid" });
+  } else {
+    res.status(201).send({
+      user,
+      token,
+    });
   }
-
-  res.status(201).send({
-    user,
-    token,
-  });
 });
 
 export default router;
