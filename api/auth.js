@@ -1,11 +1,8 @@
-import express from "express";
-let router = express.Router();
-
 let users = [];
 let token =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwiaWF0IjoxNTE2MjM5MDIyfQ.awGhRs6fA7cGxHQ5zuFMUEuOiA6cpKk7XLO4AO74RhA";
 
-router.post("/register", function (req, res, next) {
+export function register(req, res, next) {
   let bodyParams = req.body;
   if (users.some((user) => user.username == bodyParams.username)) {
     res.status(400).send({ message: "username a ready used" });
@@ -17,9 +14,9 @@ router.post("/register", function (req, res, next) {
     });
   }
   next();
-});
+}
 
-router.post("/login", function (req, res, next) {
+export function login(req, res, next) {
   let bodyParams = req.body;
   let user = users.find(
     (user) =>
@@ -36,6 +33,4 @@ router.post("/login", function (req, res, next) {
       token,
     });
   }
-});
-
-export default router;
+}

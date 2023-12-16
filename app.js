@@ -3,8 +3,7 @@ import express from "express";
 import morgan from "morgan";
 import cors from "cors";
 
-// var indexRouter = require('./routes/index');
-import authRouter from "./routes/auth.js";
+import apiRoutes from "./api/index.js";
 
 var app = express();
 
@@ -12,7 +11,6 @@ app.use(morgan("dev"));
 app.use(express.json());
 app.use(cors());
 
-//app.use('/', indexRouter);
-app.use("/api", authRouter);
+app.use("/api", apiRoutes);
 
 export default app;
