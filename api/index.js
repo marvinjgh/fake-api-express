@@ -2,6 +2,7 @@ import express from "express";
 import { register, login } from "./auth.js";
 import { people } from "./people.js";
 import { posts, search } from "./posts.js";
+import { savedGet, savedPost } from "./saved.js";
 import jwt from "jsonwebtoken";
 import users from "../data/users.js";
 
@@ -27,6 +28,8 @@ router.post("/register", register);
 router.post("/login", login);
 router.get("/people", authenticateToken, people);
 router.get("/posts", authenticateToken, posts);
-router.get("/posts/search", search);
+router.get("/posts/search", authenticateToken, search);
+router.get("/posts/saved", authenticateToken, savedGet);
+router.post("/posts/saved", authenticateToken, savedPost);
 
 export default router;
