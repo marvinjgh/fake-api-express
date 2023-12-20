@@ -1,25 +1,7 @@
-function randomPerson(isFollowing) {
-  const characters = "abcdefghijklmnopqrstuvwxyz";
-  const avatar = Math.random().toString(16).substring(2, 8);
-  const charactersLength = characters.length;
-
-  const randomChar = () =>
-    characters.charAt(Math.floor(Math.random() * charactersLength));
-  const nameLen = () => Math.max(1, Math.floor(Math.random() * 20));
-  let name = "";
-
-  for (let i = 0; i < nameLen(); i++) {
-    name += randomChar();
-  }
-
-  return {
-    avatar: `https://singlecolorimage.com/get/${avatar}/64x64`,
-    name: `${name.charAt(0).toUpperCase()}${name.substring(1)}`,
-    following: isFollowing,
-  };
-}
+import {randomPerson} from "../utils/generators.js";
 
 export function people(req, res, next) {
+
   let following = [];
   let suggestion = [];
 
