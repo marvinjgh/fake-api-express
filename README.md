@@ -1,6 +1,6 @@
 # fake-api-express
 
-Mock server powered by Express.js
+Mock server powered by Express.js, all the image url generated are random colors to use with [https://singlecolorimage.com](https://singlecolorimage.com) api.
 
 ## TODO's
 - [x] create a complete new express server
